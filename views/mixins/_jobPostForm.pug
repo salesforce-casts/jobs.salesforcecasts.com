@@ -1,6 +1,6 @@
 mixin jobPostForm(jobPost = {})
 
-	form(action="/add" method="POST" class="card")
+	form(action="/create_job_post" method="POST" class="card")
 		label(for="title") Job Title
 		input(type="text" name="title")
 
@@ -9,5 +9,18 @@ mixin jobPostForm(jobPost = {})
 
 		label(for="responsibilities") Roles & Responsibilities
 		textarea(name="responsibilities")
+
+		label(for=salary) Salary
+		input(type="number" name="salary")
+
+		label(for=applyUrl) Apply URL
+		input(type="text" name="applyUrl")
+
+		label(for=companyName) Company Name
+		input(type="text" name="companyName")
+
+		label(for=jobLocation) Job Location
+		input(type="text" name="jobLocation")
+
 
 		input(type="submit" value="Save ->" class="button")
