@@ -1,3 +1,6 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "[jade]": {
+        "editor.tabSize": 2
+    },
 }

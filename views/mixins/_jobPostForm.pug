@@ -1,0 +1,13 @@
+mixin jobPostForm(jobPost = {})
+
+	form(action="/add" method="POST" class="card")
+		label(for="title") Job Title
+		input(type="text" name="title")
+
+		label(for="description") Job Description
+		textarea(name="description")
+
+		label(for="responsibilities") Roles & Responsibilities
+		textarea(name="responsibilities")
+
+		input(type="submit" value="Save ->" class="button")
