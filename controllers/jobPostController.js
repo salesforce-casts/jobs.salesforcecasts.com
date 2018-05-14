@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const JobPost = mongoose.model('JobPost');
 
-exports.homePage = (req,res) => {
-    res.render('index');
+exports.homePage = async(req,res) => {
+
+    const jobPosts = await JobPost.find();
+    console.log(jobPosts);
+    res.render('index', { title: 'Job Posts', jobPosts });
 };
 
 exports.jobPost = (req, res) => {
@@ -14,4 +17,23 @@ exports.createJobPost = async (req,res) => {
     await jobPost.save();
     req.flash('success', `${jobPost.title} is created successfully !!`);
     res.redirect(`/job/${jobPost.slug}`);
+}
+
+exports.editJobPost = async(req,res) => {
+    const jobPost = await JobPost.findOne({ _id: req.params.id });
+    console.log(jobPost)
+    res.render('jobPost/editJobPost', {title: 'Edit Job Post', jobPost});
+}
+
+exports.updateJobPost = async(req,res) => {
+
+    const jobPost = await JobPost.findOneAndUpdate({ _id: req.params.id }, req.body, {
+        new: true,
+        runValidators: true
+
+    }).exec();
+    console.log(jobPost);
+    req.flash('success', `${jobPost.title} updated successfully !!`);
+    res.redirect(`/job/${jobPost._id}/edit`);
+
 }

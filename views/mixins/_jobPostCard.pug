@@ -1,0 +1,11 @@
+mixin jobPostCard( jobPost = {})
+
+	h5= jobPost.title
+	p= jobPost.description
+	p= jobPost.responsibilities
+	p= jobPost.salary
+	p= jobPost.jobLocation
+	p= jobPost.companyName
+	p= jobPost.applyUrl
+
+	a(href=`/job/${jobPost.id}/edit`) edit

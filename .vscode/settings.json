@@ -1,6 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
-    "[jade]": {
+    "[pug]": {
         "editor.tabSize": 2
     },
 }
