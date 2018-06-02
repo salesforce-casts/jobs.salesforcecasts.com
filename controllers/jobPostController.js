@@ -27,6 +27,7 @@ exports.editJobPost = async(req,res) => {
 
 exports.updateJobPost = async(req,res) => {
 
+    // res.send(req.body);
     const jobPost = await JobPost.findOneAndUpdate({ _id: req.params.id }, req.body, {
         new: true,
         runValidators: true

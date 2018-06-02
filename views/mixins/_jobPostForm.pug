@@ -5,10 +5,14 @@ mixin jobPostForm(jobPost = {})
 		input(type="text" name="title" value=jobPost.title)
 
 		label(for="description") Job Description
-		textarea(name="description" id="editor")= jobPost.description
+		input(type="hidden" name="description" value=jobPost.description)
+		div(id="editor-description")
+			textarea()= jobPost.description
 
 		label(for="responsibilities") Roles & Responsibilities
-		textarea(name="responsibilities" id="editor")= jobPost.responsibilities
+		input(type="hidden" name="responsibilities" value=jobPost.responsibilities)
+		div(id="editor-responsibilities")
+			textarea()= jobPost.responsibilities
 
 		label(for=salary) Salary
 		input(type="number" name="salary" value=jobPost.salary)
