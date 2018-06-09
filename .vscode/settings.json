@@ -1,7 +1,16 @@
 {
-    "git.ignoreLimitWarning": true,
-    "[pug]": {
-        "editor.tabSize": 2
-    },
-    "editor.tabSize": 2,
+  "git.ignoreLimitWarning": true,
+  "[pug]": {
+    "editor.tabSize": 2
+  },
+  "editor.tabSize": 2,
+  "terminal.integrated.env.osx": {
+    "SFDX_SET_CLIENT_IDS": "sfdx-vscode"
+  },
+  "terminal.integrated.env.linux": {
+    "SFDX_SET_CLIENT_IDS": "sfdx-vscode"
+  },
+  "terminal.integrated.env.windows": {
+    "SFDX_SET_CLIENT_IDS": "sfdx-vscode"
+  }
 }
